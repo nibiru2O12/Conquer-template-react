@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Home from './Home';
 import { TopNav } from './../Common/StyledComponents';
 import About from './About';
+import Services from './Services';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         </TopNav>
         <Home title="conquer" desc="Simple Bootstrap Template"/>
         <About />
+        <Services />
       </div>
     );
   }

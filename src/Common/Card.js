@@ -30,74 +30,73 @@ const Card = ({
         </div>
     )
 
-const Styled = styled(Card)`    
-    width: 30%;
-    box-sizing: border-box;
-    line-height: 1.5;
-    background: #F2F2F2;
-    margin: 20px;
+export default styled(Card)`    
+width: 30%;
+box-sizing: border-box;
+line-height: 1.5;
+background: #F2F2F2;
+margin: 20px;
 
-    & img {
-        width: 100%;
+& img {
+    width: 100%;
+}
+
+& .content{
+    padding: 25px;
+    text-align: left;
+    font-size: 16px;
+    & h3{
+        margin-bottom: 10px;
+        text-align: ${({ titlePosition }) => titlePosition};
+        ${(props) => {
+    switch (props.actionType) {
+        case "primary":
+            return `color: ${theme.primary}`;
+        case "secondary":
+            return `color: ${theme.secondary}`
+        case "danger":
+            return `color: ${theme.danger}`;
+        default:
+            return `color: ${theme.default}`
+    }
+}}; 
     }
 
-    & .content{
-        padding: 25px;
-        text-align: left;
-        font-size: 16px;
-        & h3{
-            margin-bottom: 10px;
-            text-align: ${({ titlePosition }) => titlePosition};
-            ${(props) => {
-        switch (props.actionType) {
-            case "primary":
-                return `color: ${theme.primary}`;
-            case "secondary":
-                return `color: ${theme.secondary}`
-            case "danger":
-                return `color: ${theme.danger}`;
-            default:
-                return `color: ${theme.default}`
-        }
-    }}; 
-        }
-
-        a {
-            display: block;
-            text-decoration: none;
-            margin: ${({ actionPosition }) => {
-                switch (actionPosition) {
-                    case "left":
-                        return `30px auto 0 auto;`;
-                    case "right":
-                        return `30px 0 auto auto;`;
-                    default:
-                        return `30px auto auto auto;`;
-                }
-            }};
-            color: white;
-            width: 150px;
-            text-align: center;
-            padding: 10px 15px;
-            text-align: center;
-            ${(props) => {
-                switch (props.actionType) {
-                    case "primary":
-                        return `background: ${theme.primary}`;
-                    case "secondary":
-                        return `background: ${theme.secondary}`
-                    case "danger":
-                        return `background: ${theme.danger}`;
-                    default:
-                        return `background: white; color: ${theme.default}; border: 1px solid ${theme.default}`
-                }
-            }}; 
-            border-radius: 5px;
-        }
-        & a:hover{
-            background: #E0E0E0;
-        }
+    a {
+        display: block;
+        text-decoration: none;
+        margin: ${({ actionPosition }) => {
+            switch (actionPosition) {
+                case "left":
+                    return `30px auto 0 auto;`;
+                case "right":
+                    return `30px 0 auto auto;`;
+                default:
+                    return `30px auto auto auto;`;
+            }
+        }};
+        color: white;
+        width: 150px;
+        text-align: center;
+        padding: 10px 15px;
+        text-align: center;
+        ${(props) => {
+            switch (props.actionType) {
+                case "primary":
+                    return `background: ${theme.primary}`;
+                case "secondary":
+                    return `background: ${theme.secondary}`
+                case "danger":
+                    return `background: ${theme.danger}`;
+                default:
+                    return `background: white; color: ${theme.default}; border: 1px solid ${theme.default}`
+            }
+        }}; 
+        border-radius: 5px;
     }
+    & a:hover{
+        background: #E0E0E0;
+    }
+}
 `;
-
-export default Styled;
+;

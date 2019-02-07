@@ -81,14 +81,15 @@ const About = ({className}) => (
     </Section>
 );
 
-const Styled = styled(About)`
+
+export default styled(About)`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
     width: 90vw;
     margin: auto;
-    
+
     & .section1{
         display: flex;
         justify-content: center;
@@ -100,7 +101,4 @@ const Styled = styled(About)`
         justify-content: center;
         flex-wrap:wrap;
     }
-`;
-
-
-export default Styled;
+    `;
