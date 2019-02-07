@@ -6,6 +6,7 @@ import one from '../images/1-1.jpg'
 import two from '../images/1-2.jpg'
 import three from '../images/1-3.jpg'
 import four from '../images/2-1.jpg'
+import five from '../images/2-2.jpg'
 
 const About = ({className}) => (
     <Section className={className}>
@@ -61,7 +62,7 @@ const About = ({className}) => (
                 style={{width:"46.66%",textAlign: "center",color: "#757575"}}
             />
             <Card
-                image={four}
+                image={five}
                 title="Two Column Left Side"
                 titlePosition="center"
                 desc="MLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempor eros eget 

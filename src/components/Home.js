@@ -28,6 +28,7 @@ export default styled(Home)`
     text-transform: uppercase;
     font-size: 70px;
     text-shadow: 2px 2px black;
+    margin-bottom: 10px;
   }
 
   & .description {

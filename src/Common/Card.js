@@ -1,26 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = ({ 
-        className, 
-        title, desc, 
-        actionText, 
-        onActionClick, 
-        image, 
-        actionType,
-        style,
-        titlePosition,
-        actionPosition
-     }) => (
-    <div className={className} style={style}>
-        {image && <img src={image} />}
-        <div className="content">
-            <h3>{title}</h3>
-            <p>{desc}</p>
-            {actionText && <a href="" onClick={onActionClick}>{actionText}</a>}
+const theme = {
+    primary: "#1565C0",
+    secondary: "#2E7D32",
+    danger: "#c62828",
+    warning: "#FF6F00",
+    default: "#546E7A"
+}
+
+const Card = ({
+    className,
+    title, desc,
+    actionText,
+    onActionClick,
+    image,
+    actionType,
+    style,
+    titlePosition,
+    actionPosition
+}) => (
+        <div className={className} style={style}>
+            {image && <img src={image} />}
+            <div className="content">
+                <h3>{title}</h3>
+                <p>{desc}</p>
+                {actionText && <a href="" onClick={onActionClick}>{actionText}</a>}
+            </div>
         </div>
-    </div>
-)
+    )
 
 const Styled = styled(Card)`    
     width: 30%;
@@ -39,26 +47,26 @@ const Styled = styled(Card)`
         font-size: 16px;
         & h3{
             margin-bottom: 10px;
-            text-align: ${({titlePosition})=>titlePosition};
-            ${(props)=>{
-                switch(props.actionType){
-                    case "primary":
-                        return `color: green`;
-                    case "secondary":
-                        return `color: blue`
-                    case "danger":
-                        return `color: red`;
-                    default:
-                        return `color: gray`
-                }
-            }}; 
+            text-align: ${({ titlePosition }) => titlePosition};
+            ${(props) => {
+        switch (props.actionType) {
+            case "primary":
+                return `color: ${theme.primary}`;
+            case "secondary":
+                return `color: ${theme.secondary}`
+            case "danger":
+                return `color: ${theme.danger}`;
+            default:
+                return `color: ${theme.default}`
+        }
+    }}; 
         }
 
         a {
             display: block;
             text-decoration: none;
-            margin: ${({actionPosition})=>{
-                switch(actionPosition){
+            margin: ${({ actionPosition }) => {
+                switch (actionPosition) {
                     case "left":
                         return `30px auto 0 auto;`;
                     case "right":
@@ -66,25 +74,28 @@ const Styled = styled(Card)`
                     default:
                         return `30px auto auto auto;`;
                 }
-            }}
+            }};
+            color: white;
             width: 150px;
             text-align: center;
             padding: 10px 15px;
             text-align: center;
-            ${(props)=>{
-                switch(props.actionType){
+            ${(props) => {
+                switch (props.actionType) {
                     case "primary":
-                        return `background: green`;
+                        return `background: ${theme.primary}`;
                     case "secondary":
-                        return `background: blue`
+                        return `background: ${theme.secondary}`
                     case "danger":
-                        return `background: red`;
+                        return `background: ${theme.danger}`;
                     default:
-                        return `background: gray`
+                        return `background: white; color: ${theme.default}; border: 1px solid ${theme.default}`
                 }
             }}; 
-            color: white;
             border-radius: 5px;
+        }
+        & a:hover{
+            background: #E0E0E0;
         }
     }
 `;
