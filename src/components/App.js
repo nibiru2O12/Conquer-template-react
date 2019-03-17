@@ -6,6 +6,7 @@ import { TopNav } from './../Common/StyledComponents';
 import About from './About';
 import Services from './Services';
 import Contact from './Contact';
+import Footer from './Footer';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
         <About />
         <Services />
         <Contact />
+        <Footer />
       </div>
     );
   }

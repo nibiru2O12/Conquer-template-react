@@ -93,12 +93,19 @@ export default styled(About)`
     & .section1{
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-direction: row;
+        
+        /* wrap on small devices */
+        /* flex-wrap: wrap;  */
     }
 
+
     & .section2{
+        padding: 0;
+        margin: 0;
         display: flex;
         justify-content: center;
         flex-wrap:wrap;
     }
+
     `;

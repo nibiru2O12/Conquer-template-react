@@ -38,11 +38,14 @@ const Card = ({
 );
 
 export default styled(Card)`
-  width: 30%;
+  /* width: 30%; */
   box-sizing: border-box;
   line-height: 1.5;
   background: #f2f2f2;
-  margin: 20px;
+  /* margin: 20px; */
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 30px;
 
   & img {
     width: 100%;
